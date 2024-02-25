@@ -1,0 +1,20 @@
+body, html {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+#game {
+    text-align: center;
+}
+
+#userGuess {
+    margin-top: 20px;
+}
+
+#feedback {
+    margin-top: 20px;
+    font-weight: bold;
+}
