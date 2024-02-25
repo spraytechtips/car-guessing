@@ -1,20 +1,67 @@
 body, html {
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
 }
 
-#game {
+.container {
     text-align: center;
+    width: 80%;
+    max-width: 600px;
 }
 
-#userGuess {
+header h1 {
+    margin: 0;
+    color: #333;
+}
+
+header p {
+    color: #666;
+}
+
+.game-area {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.car-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.user-input, .btn {
+    padding: 10px;
+    margin: 10px 0;
+    width: calc(100% - 22px);
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btn {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+    .btn:hover {
+        background-color: #0056b3;
+    }
+
+.feedback {
     margin-top: 20px;
 }
 
-#feedback {
+footer {
     margin-top: 20px;
-    font-weight: bold;
+    color: #777;
 }
