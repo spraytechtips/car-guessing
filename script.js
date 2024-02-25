@@ -33,20 +33,15 @@ async function newGame() {
 }
 
 // Event listener for the guess button
-document.addEventListener('DOMContentLoaded', function () {
-    const guessButton = document.getElementById('guessButton');
-    const feedback = document.getElementById('feedback');
-    // Assuming you have a way to set the correct answer
-    let correctAnswer = 'Example Make and Model'; // This should come from your game logic
-
-    guessButton.addEventListener('click', function () {
-        const userGuess = document.getElementById('userGuess').value;
-        if (userGuess.toLowerCase() === correctAnswer.toLowerCase()) {
-            feedback.textContent = 'Correct! Well done.';
-        } else {
-            feedback.textContent = 'Wrong, try again!';
-        }
-    });
+document.getElementById('guessButton').addEventListener('click', function () {
+    const userGuess = document.getElementById('userGuess').value.toLowerCase();
+    const actual = currentCar.toLowerCase();
+    if (userGuess === actual) {
+        document.getElementById('feedback').textContent = 'Correct! Well done.';
+        document.getElementById('nextButton').style.display = 'block';
+    } else {
+        document.getElementById('feedback').textContent = 'Wrong, try again!';
+    }
 });
 
 // Event listener for the next button
