@@ -100,39 +100,15 @@ async function newGame() {
 }
 
 // Event listener for the guess button
-document.addEventListener('DOMContentLoaded', function () {
-    const guessButton = document.getElementById('guessButton');
-    const userGuess = document.getElementById('userGuess');
-    const feedback = document.getElementById('feedback');
-    const nextButton = document.getElementById('nextButton');
-
-    guessButton.addEventListener('click', function () {
-        if (userGuess.value.toLowerCase() === correctAnswer.toLowerCase()) {
-            feedback.textContent = 'Correct! Well done.';
-            nextButton.style.display = 'block'; // Show the "Next Car" button if correct
-        } else {
-            feedback.textContent = 'Wrong, try again!';
-            nextButton.style.display = 'none'; // Hide the "Next Car" button if wrong
-        }
-    });
-
-    userGuess.addEventListener('keydown', function (event) {
-        // Check if the pressed key is Enter
-        if (event.key === "Enter") {
-            event.preventDefault(); // Prevent the default action to stop form submission or any other bound behavior
-            checkGuess(); // Call the checkGuess function
-        }
-    });
-
-    nextButton.addEventListener('click', function () {
-        // Logic to load the next car image and reset for the next round
-        // This should include resetting the feedback text and hiding the next button again
-        feedback.textContent = ''; // Clear feedback text
-        userGuess.value = ''; // Clear the input field
-        this.style.display = 'none'; // Hide the "Next Car" button
-
-        // Reset or update the correctAnswer variable as needed for the next round
-    });
+document.getElementById('guessButton').addEventListener('click', function () {
+    const userGuess = document.getElementById('userGuess').value.toLowerCase();
+    const actual = currentCar.toLowerCase();
+    if (userGuess === actual) {
+        document.getElementById('feedback').textContent = 'Correct! Well done.';
+        document.getElementById('nextButton').style.display = 'block';
+    } else {
+        document.getElementById('feedback').textContent = 'Wrong, try again!';
+    }
 });
 
 // Event listener for the next button
