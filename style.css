@@ -1,71 +1,151 @@
 body, html {
     margin: 0;
     padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #f5f5f5;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    font-family: 'Arial', sans-serif;
-    background-color: #f5f5f5;
+    text-align: center;
 }
 
 .container {
-    text-align: center;
-    width: 80%;
+    width: 90%;
     max-width: 600px;
+    margin: 20px;
 }
 
-header h1 {
-    margin: 0;
-    color: #333;
+.header {
+    margin-bottom: 1em;
 }
 
-header p {
-    color: #666;
-}
+    .header h1 {
+        color: #333;
+    }
+
+    .header p {
+        color: #666;
+        margin-bottom: 1em;
+    }
 
 .game-area {
-    margin: 20px 0;
+    background-color: #ffffff;
     padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.image-wrapper {
+    position: relative;
+    display: inline-block; /* or block depending on your layout */
+    width: 500px; /* Set this to the width of your image */
+    height: 300px; /* Set this to the height of your image */
+    margin: 20px auto; /* Center the wrapper */
 }
 
 .car-image {
-    max-width: 100%;
+    width: 100%;
     height: auto;
-    margin-bottom: 20px;
+    border-radius: 10px; /* Optional: if you want rounded corners */
+}
+
+/* Overlay styles */
+.overlay {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 1); /* Semi-transparent white overlay */
+    width: 100%;
+    height: 16.66%; /* Divide the container into 6 equal parts vertically */
+    top: 0;
+    left: 0;
+    display: block;
+    transition: opacity 0.5s ease; /* Smooth transition for fading out */
+}
+
+/* Example positions for six overlays. Adjust the 'top' value for each overlay accordingly. */
+#overlay1 {
+    top: 13.88%;
+}
+
+#overlay2 {
+    top: 27.77%;
+}
+
+#overlay3 {
+    top: 41.65%;
+}
+
+#overlay4 {
+    top: 55.53%;
+}
+
+#overlay5 {
+    top: 69.42%;
+}
+
+#overlay6 {
+    top: 83.33%;
+}
+
+/* When an overlay is to be hidden, add a class 'hidden' with JavaScript */
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility 0s 0.5s, opacity 0.5s ease;
 }
 
 .user-input, .btn {
-    padding: 10px;
-    margin: 10px 0 10px 0; /* Adjusted margin */
-    width: calc(100% - 22px); /* Adjust width if necessary */
+    padding: 15px;
+    margin: 10px 0;
+    width: 90%;
     box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    display: block; /* Ensure input and buttons are block elements */
-    margin-left: auto; /* Center align the element */
-    margin-right: auto; /* Center align the element */
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 16px;
 }
 
 .btn {
-    background-color: #007bff;
+    display: inline-block; /* or 'block' if you prefer it to take the full width */
+    padding: 10px 20px;
+    margin: 20px auto; /* Auto margins on the sides will center the button */
+    font-size: 16px;
     color: white;
-    cursor: pointer;
+    background-color: #007aff;
     border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
     .btn:hover {
         background-color: #0056b3;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
+/* Center the button within its parent container */
+.next-button-container {
+    text-align: center; /* Centers inline-block or inline elements within it */
+}
+
 .feedback {
+    color: #333;
     margin-top: 20px;
-    color: #333; /* Ensure feedback is visible */
 }
 
 footer {
-    margin-top: 20px;
+    margin-top: 30px;
     color: #777;
 }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .image-wrapper {
+        width: 100%; /* Full width on smaller screens */
+        height: auto; /* Adjust height to maintain aspect ratio */
+    }
+
+    .user-input, .btn {
+        width: calc(100% - 40px); /* Adjust input and button width on smaller screens */
+    }
+}
+

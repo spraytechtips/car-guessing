@@ -9,19 +9,26 @@
     <div class="container">
         <header>
             <h1>Guess the Car!</h1>
-            <p>Try to guess the make and model of the car shown in the image.</p>
+            <p>Try to guess the make and model of the car shown in the image within 6 attempts.</p>
         </header>
         <main>
-            <div class="game-area">
-                <img src="" alt="Guess this car" id="carImage" class="car-image">
-                <input type="text" id="userGuess" placeholder="Enter make and model" class="user-input">
-                <button id="guessButton" class="btn">Guess</button>
-                <div id="feedback" class="feedback"></div>
-                <button id="nextButton" class="btn" style="display:none;">Next Car</button>
+            <div id="imageWrapper" class="image-wrapper">
+                <img src="" alt="Guess this car" id="carImage" width="500" height="300">
+                <!-- Overlays to hide parts of the image, which will be removed on incorrect guesses -->
+                <div class="overlay" id="overlay1"></div>
+                <div class="overlay" id="overlay2"></div>
+                <div class="overlay" id="overlay3"></div>
+                <div class="overlay" id="overlay4"></div>
+                <div class="overlay" id="overlay5"></div>
+                <div class="overlay" id="overlay6"></div>
             </div>
+            <input type="text" id="userGuess" placeholder="Enter make and model" class="user-input">
+            <button id="guessButton" class="btn">Guess</button>
+            <div id="feedback" class="feedback"></div>
+            <button id="nextButton" class="btn" style="display:none;">Next Car</button>
         </main>
         <footer>
-            <p>Created for car enthusiasts.</p>
+            <p>Created by @afk_spray on Instagram.</p>
         </footer>
     </div>
     <script src="script.js"></script>
