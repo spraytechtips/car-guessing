@@ -116,6 +116,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         guessButton.disabled = false;
         nextButton.style.display = 'none';
         currentGuess = 0;
+        guessesLeft = 6;
         overlays.forEach(overlay => overlay.style.display = 'block'); // Reset overlays to cover the image
     }
 
@@ -147,6 +148,14 @@ document.addEventListener('DOMContentLoaded', async function () {
             } else {
                 feedback.textContent = `Wrong, try again! You have ${guessesLeft} guesses left.`;
             }
+        }
+    });
+
+    userGuess.addEventListener('keypress', function (event) {
+        // Check if the pressed key is the Enter key
+        if (event.key === 'Enter' || event.keyCode === 13) { // The keyCode property is deprecated but included here for broader compatibility
+            event.preventDefault(); // Prevent the default action to avoid submitting a form if your input is part of one
+            guessButton.click(); // Programmatically trigger the click event of the guess button
         }
     });
 
